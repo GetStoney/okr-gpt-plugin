@@ -1,0 +1,97 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "OKR Generator Plugin",
+    "version": "1.0.0",
+    "description": "A plugin that helps users generate structured OKRs based on input criteria."
+  },
+  "servers": [
+    {
+      "url": "https://getstoney.github.io/okr-gpt-plugin"
+    }
+  ],
+  "paths": {
+    "/generate_okr": {
+      "post": {
+        "summary": "Generate an OKR based on user input",
+        "operationId": "generateOKR",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "friction": {
+                    "type": "string"
+                  },
+                  "importance": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "target_audience": {
+                    "type": "string"
+                  },
+                  "key_results": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "classification": {
+                    "type": "string",
+                    "enum": [
+                      "Aspirational",
+                      "Committed"
+                    ]
+                  },
+                  "company_okr": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "friction",
+                  "importance",
+                  "target_audience",
+                  "key_results",
+                  "classification"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Generated OKR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "objective": {
+                      "type": "string"
+                    },
+                    "key_results": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "classification": {
+                      "type": "string"
+                    },
+                    "company_alignment": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
