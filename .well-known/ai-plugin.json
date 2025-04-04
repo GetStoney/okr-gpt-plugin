@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "OKR Generator",
+  "name_for_model": "okr_generator",
+  "description_for_human": "Generate structured OKRs based on user input.",
+  "description_for_model": "Helps users define OKRs by structuring objectives, key results, and classification.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://getstoney.github.io/okr-gpt-plugin/openapi.json"
+  },
+  "logo_url": "https://getstoney.github.io/okr-gpt-plugin/logo.png",
+  "contact_email": "cstone09@gmail.com",
+  "legal_info_url": "https://getstoney.github.io/okr-gpt-plugin/legal"
+}
